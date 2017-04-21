@@ -7,9 +7,9 @@ sys.setdefaultencoding('utf-8')
 import time
 
 DICT = {
-    "时间": "time",
-    "新增任务数": "created",
-    "完成任务数": "completed"
+    "time": "时间",
+    "created": "新增任务数",
+    "completed": "完成任务数"
 }
 
 MISSIONCHANGE_URL = "https://degree.worktile.com/api/mission/analytics/panels/default-panel:team-summary/widgets/default-widget:team-tasks-new-completed?from={}&to={}"

@@ -7,13 +7,13 @@ sys.setdefaultencoding('utf-8')
 import time
 
 DICT = {
-    "任务完成率": "completion_rate",
-    "任务延期率": "delay_rate",
-    "待完成数": "pending",
-    "延期数": "delay",
-    "已完成数": "completed",
-    "任务总数": "total",
-    "时间": "time",
+    "completion_rate" "任务完成率",
+    "delay_rate": "任务延期率",
+    "pending": "待完成数",
+    "delay": "延期数",
+    "completed": "已完成数",
+    "total": "任务总数",
+    "time": "时间",
 }
 
 
