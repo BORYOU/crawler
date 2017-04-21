@@ -6,6 +6,17 @@ sys.setdefaultencoding('utf-8')
 
 import time
 
+DICT = {
+    "成员": "name",
+    "项目数": "projectsNum",
+    "待完成": "pending",
+    "已延期": "delay",
+    "已完成": "completed",
+    "任务总数": "total",
+    "延误率": "delayRate",
+    "成员完成度": "completedRate"
+}
+
 MISSION_URL = "https://degree.worktile.com/api/mission/analytics/panels/default-panel:team-members-progress/widgets/default-widget:team-members?__ps=20&__pn=0&__search="
 
 def parse(session):
