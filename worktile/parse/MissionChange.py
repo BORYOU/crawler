@@ -38,10 +38,10 @@ def parse(session):
     if not data: return
     result = data.get("result")
     if result:
-        outList = []
-        outList.append({"time": time.strftime("%Y-%m-%d")})
-        outList.append({"created": result[0].get("created")})
-        outList.append({"completed": result[0].get("completed")})
+        outList = {}
+        outList.update({"time": time.strftime("%Y-%m-%d")})
+        outList.update({"created": result[0].get("created")})
+        outList.update({"completed": result[0].get("completed")})
         return outList
     return
     

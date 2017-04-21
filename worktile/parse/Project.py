@@ -44,16 +44,16 @@ def parse(session):
     projects = result.get("project")
     if projects:
         for project in projects:
-            outList = []
-            outList.append({"name": result.get("name", "")})
-            outList.append({"starttime": ""})
-            outList.append({"endtime": ""})
-            outList.append({"chargeman": ""})
-            outList.append({"status": ""})
-            outList.append({"pending": result.get("pending", "0")})
-            outList.append({"delay": result.get("delay", "0")})
-            outList.append({"completed": result.get("completed", "0")})
-            outList.append({"Rate": result.get("Rate", 0)})
+            outList = {}
+            outList.update({"name": result.get("name", "")})
+            outList.update({"starttime": ""})
+            outList.update({"endtime": ""})
+            outList.update({"chargeman": ""})
+            outList.update({"status": ""})
+            outList.update({"pending": result.get("pending", "0")})
+            outList.update({"delay": result.get("delay", "0")})
+            outList.update({"completed": result.get("completed", "0")})
+            outList.update({"Rate": result.get("Rate", 0)})
             yield outList
     return
     

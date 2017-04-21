@@ -7,7 +7,7 @@ sys.setdefaultencoding('utf-8')
 import time
 
 DICT = {
-    "completion_rate" "任务完成率",
+    "completion_rate": "任务完成率",
     "delay_rate": "任务延期率",
     "pending": "待完成数",
     "delay": "延期数",
@@ -42,14 +42,14 @@ def parse(session):
     if not data: return
     result = data.get("result")
     if result:
-        outList = []
-        outList.append({"completion_rate": result.get("completion_rate", 0)})
-        outList.append({"delay_rate": result.get("delay_rate", 0)})
-        outList.append({"pending": result.get("pending", 0)})
-        outList.append({"delay": result.get("delay", 0)})
-        outList.append({"completed": result.get("completed", 0)})
-        outList.append({"total": result.get("total", 0)})
-        outList.append({"time": time.strftime("%Y-%m-%d")})
+        outList = {}
+        outList.update({"completion_rate": result.get("completion_rate", 0)})
+        outList.update({"delay_rate": result.get("delay_rate", 0)})
+        outList.update({"pending": result.get("pending", 0)})
+        outList.update({"delay": result.get("delay", 0)})
+        outList.update({"completed": result.get("completed", 0)})
+        outList.update({"total": result.get("total", 0)})
+        outList.update({"time": time.strftime("%Y-%m-%d")})
         return outList
     return
     

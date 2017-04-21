@@ -41,19 +41,19 @@ def parse(session):
     results = data.get("result")
     if results:
         for result in results:
-            outList = []
+            outList = {}
             try:
                 name = result['details']['name']
             except:
                 name = ""
-            outList.append({"name":name})
-            outList.append({"projectsNum": result.get("n_projects", 0)})
-            outList.append({"pending": result.get("n_tasks_pending", 0)})
-            outList.append({"delay": result.get("n_tasks_delay", 0)})
-            outList.append({"completed": result.get("n_tasks_completed", 0)})
-            outList.append({"total": result.get("n_tasks", 0)})
-            outList.append({"delayRate": result.get("tasks_delay_rate", 0)})
-            outList.append({"completedRate": ""})
+            outList.update({"name":name})
+            outList.update({"projectsNum": result.get("n_projects", 0)})
+            outList.update({"pending": result.get("n_tasks_pending", 0)})
+            outList.update({"delay": result.get("n_tasks_delay", 0)})
+            outList.update({"completed": result.get("n_tasks_completed", 0)})
+            outList.update({"total": result.get("n_tasks", 0)})
+            outList.update({"delayRate": result.get("tasks_delay_rate", 0)})
+            outList.update({"completedRate": ""})
             yield outList
     return
     
