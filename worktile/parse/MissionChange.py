@@ -42,7 +42,7 @@ def parse(session):
         outList.update({"time": time.strftime("%Y-%m-%d")})
         outList.update({"created": result[0].get("created")})
         outList.update({"completed": result[0].get("completed")})
-        return outList
+        yield outList
     return
     
 if __name__ == "__main__":
